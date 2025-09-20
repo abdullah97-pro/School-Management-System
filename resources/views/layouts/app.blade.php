@@ -48,15 +48,17 @@
                                 </li>
                             @endif
                         @else
-                           @if (Route::has('register'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                                </li>
+                            @if (Auth::user('is_admin' == 4))
+                                @if (Route::has('register'))
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                    </li>
+                                @endif
+                                <li><a class="nav-link" href="{{ route('users.index') }}">Show Users</a></li>
+                                <li><a class="nav-link" href="{{ route('categories.index') }}">Class Category</a></li>
+                                <li><a class="nav-link" href="{{ route('grades.index') }}">Class Grade</a></li>
+                                <li><a class="nav-link" href="{{ route('roles.index') }}">Roles</a></li>
                             @endif
-                            <li><a class="nav-link" href="{{ route('users.index') }}">Show Users</a></li>
-                            <li><a class="nav-link" href="{{ route('categories.index') }}">Class Category</a></li>
-                            <li><a class="nav-link" href="{{ route('grades.index') }}">Class Grade</a></li>
-                            <li><a class="nav-link" href="{{ route('roles.index') }}">Roles</a></li>
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }}

@@ -21,6 +21,7 @@
                                 <th>ID</th>
                                 <th>Name</th>
                                 <th>Email</th>
+                                <th>Authorization</th>
                                 <th>Role</th>
                                 <th>Action</th>
                             </tr>
@@ -31,6 +32,7 @@
                                     <td>{{ $user->id }}</td>
                                     <td>{{ $user->name }}</td>
                                     <td>{{ $user->email }}</td>
+                                    <td>{{ $user->is_admin == 1 ? "Super Admin" : ($user->is_admin == 2 ? "Admin" : ($user->is_admin == 3 ? "Teacher" : ($user->is_admin == 4 ? "Student" : "Parent")))}}</td>
                                     <td>
                                         @foreach ($user->getRoleNames() as $role)
                                             <button class="btn -success">{{$role}}</button>

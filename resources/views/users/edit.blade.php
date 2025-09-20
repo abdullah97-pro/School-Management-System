@@ -56,11 +56,11 @@
                             </div>
                             <div class="col-sm-10">
                                 <select name="is_admin" id="" class="form-select">
-                                    <option value="{{ $user->is_admin ?? "1" }}">Super Admin</option>
-                                    <option value="2">Admin</option>
-                                    <option value="3">Teacer</option>
-                                    <option value="4">Student</option>
-                                    <option value="5">Parent</option>
+                                    <option value="1" {{ ($user->is_admin ?? 1) == 1 ? 'selected' : '' }}>Super Admin</option>
+                                    <option value="2" {{ ($user->is_admin ?? 2) == 2 ? 'selected' : '' }}>Admin</option>
+                                    <option value="3" {{ ($user->is_admin ?? 3) == 3 ? 'selected' : '' }}>Teacer</option>
+                                    <option value="4" {{ ($user->is_admin ?? 4) == 4 ? 'selected' : '' }}>Student</option>
+                                    <option value="5" {{ ($user->is_admin ?? 5) == 5 ? 'selected' : '' }}>Parent</option>
                                 </select>
                             </div>
                             @error('is_admin')
