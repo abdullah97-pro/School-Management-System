@@ -78,7 +78,7 @@ class UserController extends Controller
         $request->validate([
             'name' => 'required|min:3|max:32',
             'email' => 'required|email',
-            'is_admin' => 'required|boolean',
+            'is_admin' => 'required|numeric',
         ]);
 
         $user = User::find($id);
