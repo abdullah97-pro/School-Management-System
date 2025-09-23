@@ -58,6 +58,7 @@
                                 <li><a class="nav-link" href="{{ route('categories.index') }}">Class Category</a></li>
                                 <li><a class="nav-link" href="{{ route('grades.index') }}">Class Grade</a></li>
                                 <li><a class="nav-link" href="{{ route('roles.index') }}">Roles</a></li>
+                                <li><a class="nav-link" href="{{ route('permissions.index') }}">Permissions</a></li>
                             @elseif (Auth::user()->is_admin == 4)
                                 <li><a class="nav-link" href="{{ route('categories.index') }}">Class Category</a></li>
                                 <li><a class="nav-link" href="{{ route('grades.index') }}">Class Grade</a></li>

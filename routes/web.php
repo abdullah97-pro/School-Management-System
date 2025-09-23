@@ -6,6 +6,7 @@ use App\Http\Controllers\ClassCategoryController;
 use App\Http\Controllers\ClassGradeController;
 use App\Http\Controllers\SubjectController;
 use App\Http\Controllers\Auth\RoleController;
+use App\Http\Controllers\Auth\PermissionController;
 
 Route::get('/', function () {
     return view('index');
@@ -23,3 +24,4 @@ Route::resource('class/grades', ClassGradeController::class);
 Route::resource('subjects', SubjectController::class);
 
 Route::resource('roles', RoleController::class);
+Route::resource('permissions', PermissionController::class);
