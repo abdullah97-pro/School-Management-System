@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-10">
             <div class="card">
-                <div class="card-header">{{ __('Roles') }}</div>
+                <div class="card-header">{{ __('Permissions') }}</div>
 
                 <div class="card-body">
                     @session('success')
@@ -14,7 +14,7 @@
                         </div>
                     @endsession
 
-                    <a href="{{ route('roles.create') }}" class="btn btn-success mb-3">Create Role</a>
+                    <a href="{{ route('permissions.create') }}" class="btn btn-success mb-3">Create Permission</a>
 
                     <table class="table table-striped bordered">
                         <tr>
@@ -23,24 +23,24 @@
                             <th width="200px">Action</th>
                         </tr>
                         <tbody>
-                            @foreach ($roles as $role)
+                            @foreach ($permissions as $permission)
                                 <tr>
-                                    <td>{{ $role->id }}</td>
-                                    <td>{{ $role->name }}</td>
+                                    <td>{{ $permission->id }}</td>
+                                    <td>{{ $permission->name }}</td>
                                     <td>
-                                        <form action="{{ route('roles.destroy', $role->id) }}" method="POST">
+                                        <form action="{{ route('permissions.destroy', $permission->id) }}" method="POST">
                                             @csrf
                                             @method('DELETE')
 
-                                            @can('role-list')
-                                                <a href="{{ route('roles.show', $role->id) }}" class="btn btn-info btn-sm">Show</a>
+                                            @can('permission-list')
+                                                <a href="{{ route('permissions.show', $permission->id) }}" class="btn btn-info btn-sm">Show</a>
                                             @endcan
 
-                                            @can('role-edit')
-                                                <a href="{{ route('roles.edit', $role->id) }}" class="btn btn-primary btn-sm">Edit</a>
+                                            @can('permission-edit')
+                                                <a href="{{ route('permissions.edit', $permission->id) }}" class="btn btn-primary btn-sm">Edit</a>
                                             @endcan
 
-                                            @can('role-delete')
+                                            @can('permission-delete')
                                                 <button class="btn btn-danger btn-sm">Delete</button>
                                             @endcan
                                         </form>
